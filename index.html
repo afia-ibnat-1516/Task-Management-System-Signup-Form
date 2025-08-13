@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Management System - Sign up page</title>
+    <!-- google font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- main css -->
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/entry-page.css" />
+    <style>
+      /* LEFT COLUMN FORM */
+      .left-column {
+        padding: 40px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      form {
+        width: 100%;
+        max-width: 300px;
+        font-family: Arial, sans-serif;
+      }
+
+      label {
+        display: block;
+        margin-top: 15px;
+        margin-bottom: 5px;
+        font-weight: 500;
+      }
+
+      input[type="email"],
+      input[type="password"] {
+        width: 100%;
+        padding: 8px 10px;
+        background-color: white;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      button {
+        margin-top: 20px;
+        width: 100%;
+        padding: 10px;
+        background-color: #f87e8e;
+        border: none;
+        color: white;
+        font-size: 16px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #f87e8e;
+      }
+
+      /* RIGHT COLUMN IMAGES */
+      .right-column {
+        display: flex;
+        flex-direction: column; /* stack vertically on mobile */
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+        background-color: #f5f5f5;
+      }
+
+      .right-column img {
+        width: 100%;
+        max-width: 400px; /* responsive width */
+        height: auto;
+        border-radius: 8px;
+      }
+
+      /* ROW LAYOUT */
+      .row {
+        display: flex;
+        flex-direction: column; /* stacked on mobile */
+        min-height: 100vh;
+      }
+
+      @media (min-width: 768px) {
+        .row {
+          flex-direction: row; /* side by side on desktop */
+        }
+
+        .left-column,
+        .right-column {
+          width: 50%;
+        }
+
+        .right-column {
+          flex-direction: row; /* images side by side */
+          justify-content: center;
+          gap: 20px;
+        }
+
+        .right-column img {
+          max-width: 45%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row height-full">
+      <!-- LEFT COLUMN -->
+      <div class="left-column">
+        <marquee behavior="scroll" direction="left" scrollamount="6" class="marquee-red">
+          Welcome to your Task Tracker!
+        </marquee>
+        <marquee behavior="scroll" direction="right" scrollamount="4" class="marquee-blue">
+          Sign up now!
+        </marquee>
+        <h1 class="highlighted-heading">-Task Tracker-</h1>
+
+        <form action="http://127.0.0.1:5000/signup" method="POST">
+          <label for="email">Email</label>
+          <input type="email" name="email" required />
+
+          <label for="password">Password</label>
+          <input type="password" name="password" required />
+
+          <button type="submit">Sign up</button>
+        </form>
+
+        <p class="login-prompt">
+          Already have an account?
+          <a href="./login.html" class="log-in-link">Log in</a>
+        </p>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="right-column">
+        <img src="s-l960.jpg" alt="task" />
+        <img src="1_IxfZalyRmibH3pvOaV5v2w.png" alt="task" />
+      </div>
+    </div>
+  </body>
+</html>
