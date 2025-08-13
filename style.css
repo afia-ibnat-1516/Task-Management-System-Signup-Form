@@ -1,0 +1,58 @@
+/*** GENERAL LAYOUT ***/
+.row {
+  display: flex;
+  flex-direction: column; /* default mobile: stacked */
+  height: 100vh;
+}
+
+.left-column,
+.right-column {
+  width: 100%;
+}
+
+/* LEFT COLUMN STYLES */
+.left-column {
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* RIGHT COLUMN STYLES */
+.right-column {
+  display: flex;
+  flex-direction: column; /* mobile: stack images */
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #f5f5f5;
+  gap: 20px; /* space between images */
+}
+
+.right-column img {
+  max-width: 300px;
+  border-radius: 8px;
+}
+
+/*** MEDIA QUERIES ***/
+@media (min-width: 768px) {
+  .row {
+    flex-direction: row; /* side-by-side columns */
+  }
+
+  .left-column,
+  .right-column {
+    width: 50%;
+  }
+
+  /* On desktop: show images side by side */
+  .right-column {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .right-column img {
+    max-width: 45%; /* each image takes ~half width */
+  }
+}
